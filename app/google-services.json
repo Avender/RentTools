@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "482323028110",
-    "project_id": "renttools-b4395",
-    "storage_bucket": "renttools-b4395.appspot.com"
+    "project_number": "667692547098",
+    "firebase_url": "https://renttools-5104a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "renttools-5104a",
+    "storage_bucket": "renttools-5104a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:482323028110:android:d6451e65493d7db5a451df",
+        "mobilesdk_app_id": "1:667692547098:android:db5f3c94eb421fc7c525a3",
         "android_client_info": {
           "package_name": "com.example.renttools"
         }
       },
       "oauth_client": [
         {
-          "client_id": "482323028110-ujlmos92j60hig2tifa7ukrcv6bqo2ed.apps.googleusercontent.com",
+          "client_id": "667692547098-hju0b5p604co5mkb3c06vktfnigdi03a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAqrVOuEFxDJr0cIalSBKtCbLWmmP-OHGU"
+          "current_key": "AIzaSyDoPX097JIOtyCN5VYwNyBq-vtIw3zY6BI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "482323028110-ujlmos92j60hig2tifa7ukrcv6bqo2ed.apps.googleusercontent.com",
+              "client_id": "667692547098-hju0b5p604co5mkb3c06vktfnigdi03a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
