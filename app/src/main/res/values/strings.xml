@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">RentTools</string>
+    <string name="email">Email</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="login_image">login image</string>
+    <string name="welcome">Welcome !</string>
+    <string name="please_sign_in_to_continue">Please, sign in to continue</string>
+    <string name="sign_up">Sign up</string>
+    <string name="todo">logo</string>
+    <string name="logo">logo</string>
+    <string name="name">Name</string>
+    <string name="sign_up_string">Sign Up</string>
+    <string name="register_string">Register</string>
+    <string name="addbutton">addButton</string>
+    <string name="extended_fab_label">add</string>
+    <string name="extended_fab_content_desc">add</string>
+    <string name="search">search</string>
+    <string name="content_description_search">search</string>
+    <string name="more">More</string>
+    <string name="content_description_more">more</string>
+    <string name="page_title_tools">ToolRent</string>
+    <string name="extended_fab_logout">Log out</string>
+    <string name="myTools">My tools</string>
+    <string name="add_tool">Add tool</string>
+    <string name="add_tool_string">Add tool</string>
+    <string name="manufacturer_label_string">Manufacturer</string>
+    <string name="model_label_string">Model</string>
+    <string name="description_label_string">Description</string>
+    <string name="price_label_string">Price/day dkk</string>
+    <string name="post_tool_for_rent">Save</string>
+    <string name="profile">Profile</string>
+    <string name="kr_day">kr/day</string>
+    <string name="title_activity_my_tools">MyToolsActivity</string>
+    <string name="toolInfo">Tool</string>
+    <string name="location_label">Location</string>
+    <string name="Edit">Edit</string>
+    <string name="Delete">Delete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="notifi">Notifications</string>
+    <string name="phone">Phone</string>
+    <string name="location">Location</string>
+
+</resources>
