@@ -61,37 +61,44 @@ public class SignUpUser extends AppCompatActivity {
         String phone = editTextPhone.getText().toString().trim();
         String location = editTextLocation.getText().toString().trim();
 
+        //check if user inputs are valid
         if (name.isEmpty()) {
             editTextName.setError("Name is required!");
             editTextName.requestFocus();
             return;
         }
+
         if (email.isEmpty()) {
             editTextEmail.setError("Email is required!");
             editTextEmail.requestFocus();
             return;
         }
+
         if (password.isEmpty()) {
             editTextPassword.setError("Password is required!");
             editTextPassword.requestFocus();
             return;
-
         }
+
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please provide a valid email");
             editTextEmail.requestFocus();
             return;
         }
+
         if (password.length() < 6) {
             editTextPassword.setError("Min 6 characters for password");
             editTextPassword.requestFocus();
             return;
         }
+
+        //creates a new account using FirebaseAuth
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     progressBar.setVisibility(View.VISIBLE);
                     if (task.isSuccessful()) {
                         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        //adds the values from the user input to the FirebaseDatabase
                         User user = new User(uid, email, name, phone, location);
                         FirebaseDatabase.getInstance("https://renttools-b4395-default-rtdb.europe-west1.firebasedatabase.app")
                                 .getReference("Users")

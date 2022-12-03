@@ -1,6 +1,4 @@
 package com.example.renttools.views;
-
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,24 +65,27 @@ public class ToolsActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
+        //load the tools in the recycle view, only happens if when the user accesses the page, or searches for a tools.
         initImageBitmaps();
 
     }
 
+    //open the menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_app_bar, menu);
         return true;
     }
 
-    public void getAllToolsFromFirebase() {
 
+    //gets the tools from the database
+    public void getAllToolsFromFirebase() {
         DatabaseReference ref = database.getReference().child("Tools");
         ref.addValueEventListener(
                 new ValueEventListener() {
+                    //maps the location
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-
                         GenericTypeIndicator<Map<String, Tool>> t = new GenericTypeIndicator<Map<String, Tool>>() {
                         };
                         collectTools(dataSnapshot.getValue(t));
@@ -97,6 +98,8 @@ public class ToolsActivity extends AppCompatActivity {
                 });
     }
 
+    //gets the data from getAllToolsFromFirebase and adds it to the list to be displayed
+    //I place it in 2 arrays, to help with the sorting
     private void collectTools(Map<String, Tool> tools) {
         mToolList.clear();
         for (Map.Entry<String, Tool> entry : tools.entrySet()) {
@@ -108,6 +111,7 @@ public class ToolsActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
+    //Settings options
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -146,6 +150,10 @@ public class ToolsActivity extends AppCompatActivity {
     }
 
 
+    //Method to search for tools
+    //I created to more arrays to help with the sorting of the tools
+    //1. if nothing was typed, mToolList equals the mToolListOrig which is always the full list of tools
+    //2. if the user types something, filter through the list and search for elements that contain that string
     public void onClickSearch(View view) {
         String searcText = searchField.getEditText().getText().toString();
         if (!searcText.equals("")) {
@@ -161,6 +169,7 @@ public class ToolsActivity extends AppCompatActivity {
         {
             mToolList = mToolListOrig;
         }
+        //refresh the recycle view to contain the new list
         initRecyclerView();
     }
 }

@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = editTextEmailAddress.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-
+        //checks if the user wrote anything
         if (email.isEmpty()) {
             editTextEmailAddress.setError("Email is required!");
             editTextEmailAddress.requestFocus();
@@ -102,11 +102,13 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
+    //method used in loginUser to switch the view from login to main(ToolsActivity)
     private void updateUI() {
         Intent intent = new Intent(getApplicationContext(), ToolsActivity.class);
         startActivity(intent);
     }
 
+    //method used to send the user to the sign up page
     public void onClickSignUpFromMain(View view) {
         startActivity(new Intent(this, SignUpUser.class));
     }

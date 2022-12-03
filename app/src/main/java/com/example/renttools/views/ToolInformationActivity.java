@@ -48,6 +48,7 @@ public class ToolInformationActivity extends AppCompatActivity {
 
         image.setImageResource(R.drawable.image_not_available);
 
+        //Using Bundle to store the values of the tools, to be sent to a different page to be read and edited
         Bundle b = getIntent().getExtras();
         String manufacturer = b.getString("manufacturer");
         String model = b.getString("model");
@@ -70,6 +71,8 @@ public class ToolInformationActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance("https://renttools-b4395-default-rtdb.europe-west1.firebasedatabase.app");
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -77,6 +80,7 @@ public class ToolInformationActivity extends AppCompatActivity {
         return true;
     }
 
+    //get the values saved with bundle and sends them to AddEditToolActivity using intents
     public void onClickEdit(View view) {
         Intent intent = new Intent(this, AddEditToolActivity.class);
         intent.putExtra("manufacturer",manufText.getText());
@@ -89,6 +93,7 @@ public class ToolInformationActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    //Delete the specified tool from the DB
     public void onClickDelete(View view) {
         database.getReference().child("Tools").child(toolId).removeValue();
         Toast.makeText(this,"Succesfuly removed",Toast.LENGTH_SHORT).show();

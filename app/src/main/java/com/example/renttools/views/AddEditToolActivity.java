@@ -56,6 +56,7 @@ public class AddEditToolActivity extends AppCompatActivity {
 
     }
 
+    //receive the values from ToolInformationActivity
     private void setValuesOnEdit() {
         Bundle b = getIntent().getExtras();
         boolean isEdit = b.getBoolean("isEdit");
@@ -86,6 +87,7 @@ public class AddEditToolActivity extends AppCompatActivity {
         return true;
     }
 
+    //save the values edited with the method bellow to the database
     public void writeToolToDatabase(Tool tool) {
         Toast.makeText(AddEditToolActivity.this, "Saved", Toast.LENGTH_SHORT).show();
         if (tool.getToolId() == null) {
@@ -93,16 +95,14 @@ public class AddEditToolActivity extends AppCompatActivity {
             tool.setToolId(uuid);
         }
         mDatabase.child("Tools").child(tool.getToolId()).setValue(tool);
-
     }
 
+    //Edit the values of a tool
     public void onClickSaveTool(View view) {
-
         String manuf = manufacturerInput.getEditText().getText().toString();
         String model = modelInput.getEditText().getText().toString();
         String descr = descriptionInput.getEditText().getText().toString();
         Double price = Double.parseDouble(priceInput.getEditText().getText().toString());
-
 
         if (manuf.isEmpty()) {
             manufacturerInput.setError("Field required, \n type 'unknown' if not known ");
